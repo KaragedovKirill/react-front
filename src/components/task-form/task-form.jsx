@@ -16,6 +16,13 @@ class TaskForm extends React.Component {
     this.setState({ title: event.target.value });
   };
 
+  addTask = () => {
+    const { addTask } = this.props;
+    const { title } = this.state;
+
+    addTask(title);
+  };
+
   render() {
     const { title } = this.state;
     const locale = Locale.taskForm;
@@ -30,9 +37,3 @@ class TaskForm extends React.Component {
 }
 
 export default TaskForm;
-// addTask = () => {
-//   const { addTask } = this.props;
-//   const { title } = this.state;
-
-//   addTask(title);
-// };
